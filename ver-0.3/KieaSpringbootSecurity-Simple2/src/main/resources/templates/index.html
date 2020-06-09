@@ -6,7 +6,8 @@
 </head>
 <body>
 	<h2>index.html</h2>
-	<hr>
-	<h5>Hello, world!!!</h5>
+	<hr/>
+	<div th:text="${data.name}"></div>
+	<th:block th:text="${data.date}"/>
 </body>
 </html>

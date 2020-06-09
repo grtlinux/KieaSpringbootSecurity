@@ -6,7 +6,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.tain.domain.User;
-import org.tain.object.UserPrincipal;
 import org.tain.repository.UserRepository;
 
 @Service
@@ -19,8 +18,8 @@ public class MyUserDetailsService implements UserDetailsService {
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		User user = this.userRepository.findByUsername(username);
 		if (user == null) {
-			throw new UsernameNotFoundException("user not found...");
+			throw new UsernameNotFoundException("user not found..");
 		}
- 		return new UserPrincipal(user);
+		return new MyUserDetails(user);
 	}
 }

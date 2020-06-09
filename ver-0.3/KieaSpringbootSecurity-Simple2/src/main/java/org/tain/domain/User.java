@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -32,4 +33,18 @@ public class User {
 	
 	@Column
 	private String password;
+	
+	@Column
+	private String role;
+	
+	@Builder
+	public User(
+			String username,
+			String password,
+			String role
+			) {
+		this.username = username;
+		this.password = password;
+		this.role = role;
+	}
 }

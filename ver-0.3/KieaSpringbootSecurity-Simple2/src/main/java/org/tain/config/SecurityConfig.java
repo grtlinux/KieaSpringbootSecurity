@@ -18,15 +18,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Bean
 	@Override
 	protected UserDetailsService userDetailsService() {
-		List<UserDetails> users = new ArrayList<>();
-		users.add(User.withDefaultPasswordEncoder().username("kang").password("kang123").roles("USER").build());
-		return new InMemoryUserDetailsManager(users);
+		List<UserDetails> lstUser = new ArrayList<>();
+		lstUser.add(User.withDefaultPasswordEncoder().username("kang").password("kang123").roles("USER").build());
+		lstUser.add(User.withDefaultPasswordEncoder().username("kiea").password("kiea123").roles("USER").build());
+		return new InMemoryUserDetailsManager(lstUser);
 	}
 	*/
-
+	
 	@Autowired
 	private UserDetailsService userDetailsService;
-
+	
 	@Bean
 	public AuthenticationProvider authProvider() {
 		DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
