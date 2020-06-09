@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.tain.domain.User;
 import org.tain.object.UserObject;
 import org.tain.repository.UserRepository;
@@ -17,6 +18,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.java.Log;
 
 @SpringBootApplication
+//@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
 @Log
 public class KieaSpringbootSecuritySimple2Application implements CommandLineRunner {
 
